@@ -1,0 +1,158 @@
+.control {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    flex: 1.5;
+  }
+  
+  input::placeholder {
+    color: var(--border);
+  }
+  
+  .save-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--border);
+    color: var(--main);
+    border-radius: 13px;
+    padding: 5px 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .add-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  
+  .save-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .add-btn:hover {
+    transform: scale(1.1) rotate(180deg);
+  }
+  
+  .add-btn-icon {
+    font-size: 2em;
+    color: var(--main);
+    transition: all 3s;
+  }
+  
+  .add-btn:hover .add-btn-icon {
+    filter: brightness(5);
+  }
+  
+  .title-block {
+    position: absolute;
+    width: 34%;
+    height: 89px;
+    border-radius: 13px;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s;
+    transform-origin: bottom;
+  }
+  
+  .title-block:hover {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .cancel-btn {
+    border: none;
+    outline: none;
+    background-color: var(--main);
+    border-radius: 30% 30% 0 0;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .cancel-btn:hover {
+    background-color: var(--main);
+    padding: 5px;
+    margin: 5PX;
+    cursor: pointer;
+  }
+  
+  .title-input {
+    padding: 5px;
+    border-bottom: 2px solid var(--main);
+    width: 80px;
+    color: var(--main);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .title-input::placeholder {
+    text-align: center;
+    color: var(--main);
+  }
+  
+  .tag {
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 30%;
+    left: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 5px;
+    color: var(--border);
+    font-size: 1.1em;
+    border-bottom: 2px solid var(--border);
+  }
+  
+  .date {
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 30%;
+    left: 40%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 8.5px;
+    color: var(--border);
+    font-size: 0.7em;
+    border-bottom: 2px solid var(--border);
+  }
+  
+  @keyframes btngo {
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .save-icon {
+    font-size: 2em;
+  }
+  

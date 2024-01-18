@@ -1,0 +1,152 @@
+.notes {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    flex: 8;
+    padding: 15px;
+    margin-top: 10px;
+    overflow: scroll;
+}
+
+.show-current {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+    width: 89%;
+    /* border: 2px solid rgb(117, 118, 161); */
+    border-radius: 13px;
+    padding: 20px 5px;
+    flex: 8;
+    margin-top: 30px;
+    overflow: scroll;
+    background-color: var(--border);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.text {
+    font-size: large;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--main);
+    width: 89%;
+    height: 95%;
+    resize: none;
+    border-bottom: 1px solid var(--main);
+    border-radius: 3px;
+}
+.text::placeholder {
+    color: var(--main);
+}
+
+
+.icon {
+    font-size: 1.2em;
+    color: var(--main);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: absolute;
+    bottom: 10px;
+}
+.erase-icon {
+    left: 25px;
+}
+
+.up-icon {
+    left: 54px;
+}
+
+.low-icon {
+    left: 83px;
+}
+
+.copy-icon {
+    left: 111px;
+}
+
+.line-icon {
+    left: 195px;
+    padding-right: 10px;
+    border-right: 1px solid var(--main);
+}
+
+.list-icon {
+    left: 140px;
+}
+
+.duplicate-icon {
+    left: 168px;
+}
+
+.letters {
+    left: 240px;
+    font-size: 1.1em;
+    color: var(--main);
+    transition: all 0.3s;
+    position: absolute;
+    cursor: pointer;
+    bottom: 8px;
+}
+.icon:hover {
+    transform: scale(1.05);
+}
+
+.time-icon {
+    font-size: 1.4em;
+    color: var(--main);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: absolute;
+    opacity: 0.5;
+    right: 3px;
+    top: 3px;
+}
+
+.time-icon:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.date-display {
+    font-size: 0.7em;
+    color: var(--main);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: absolute;
+    opacity: 0.7;
+    right: 30px;
+    top: -10px;
+}
+
+.time-display1 {
+    font-size: 0.7em;
+    right: 5px;
+    top: 10px;
+}
+
+.time-display2 {
+    font-size: 0.7em;
+    right: 5px;
+    top: 23px;
+}
+
+.time-display3 {
+    font-size: 0.55em;
+    right: 5px;
+    top: 36px;
+}
+
+.time {
+    color: var(--main);
+    position: absolute;
+    opacity: 0.7;
+}

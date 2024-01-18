@@ -1,0 +1,139 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 34%;
+    flex: 1;
+    border-bottom: 2px solid var(--border);
+    border-radius: 8px;
+}
+
+.delete-all {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-all:hover, .copy-all:hover, .unpin-all:hover {
+    transform: scale(1.1);
+}
+
+
+.unpin-all {
+    position: absolute;
+    top:34px;
+    right: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.title {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 0.9em;
+  
+    color: var(--border);
+}
+
+.colors-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--border);
+}
+
+.back-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.colors-container {
+    position: absolute;
+    top: 5px;
+    border-radius: 5px;
+    left: 5px;
+}
+
+.colors-icon:hover, .back-icon:hover {
+    transform: scale(1.1);
+}
+
+.color-picker {
+    cursor: pointer;
+}
+
+.close-colors {
+    position: absolute;
+    top: 60px;
+    left: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.random-colors {
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.default-colors {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.close-colors:hover, .random-colors:hover, .default-colors:hover {
+    transform: scale(1.05);
+}
+
+.copy-all {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cancel-search {
+    position: absolute;
+    color: var(--border);
+    font-size: 1em;
+    left: 5px;
+    top: 20px;
+    opacity: 0.7;
+}
+
+.search-icon {
+    position: absolute;
+    color: var(--border);
+    font-size: 1.4em;
+    left: 7px;
+    top: 34px;
+}
+
+.cancel-search, .search-icon {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cancel-search:hover, .search-icon:hover {
+    transform: scale(1.05);
+}
