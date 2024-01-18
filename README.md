@@ -12,11 +12,13 @@ ProNotes is a simple note-taking application using Tauri (React + Rust), with a 
 
 3. **Update Notes**: Keep your information up-to-date by editing existing notes.
 
-4. **Pin Notes**: Pin important notes to ensure they stay at the top for quick access.
+4. **Search Notes**: Search by title, text, tag and date for any note you writed.
 
-5. **Change Theme**: Personalize your app by making your own theme.
+5. **Pin Notes**: Pin important notes to ensure they stay at the top for quick access.
 
-6. **Note Editor**: Enjoy a user-friendly note editor that makes writing and organizing notes a breeze.
+6. **Change Theme**: Personalize your app by making your own theme.
+
+7. **Note Editor**: Enjoy a user-friendly note editor that makes writing and organizing notes a breeze.
 
 ![App Screenshot](./pronotesNoteEditor.png)
 
