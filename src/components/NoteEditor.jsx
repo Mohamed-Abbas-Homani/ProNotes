@@ -119,9 +119,9 @@ const NoteEditor = ({ current, setCurrent, changeText }) => {
           {showTime && (
             <>
               <p className="date-display">{current.date.split("T")[0]}</p>
-              <p className="time-display1 time">{current.date.split("T")[1].slice(0, 2)}</p>
-              <p className="time-display2 time">{current.date.split("T")[1].slice(3, 5)}</p>
-              <p className="time-display3 time">{current.date.split("T")[1].slice(9, 11).toLowerCase()}</p>
+              <p className="time-display1 time">{current.date.split("T")[1].slice(0, 2).replace(":","")}</p>
+              <p className="time-display2 time">{current.date.split("T")[1].slice(3, 5).replace(":","")}</p>
+              <p className="time-display3 time">{current.date.split("T")[1].split(" ")[1].toLowerCase()}</p>
             </>
           )}
         </>
