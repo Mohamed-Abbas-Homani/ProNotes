@@ -2,6 +2,8 @@
 
 ProNotes is a simple note-taking application using Tauri (React + Rust), with a focus on ease of use and customization. Manage your notes effortlessly with features like adding, deleting, updating, and pinning. Customize your experience by changing the theme, all while enjoying a sleek and intuitive note editor.
 
+![App Screenshot](./pronotesThemes.png)
+
 ## Features
 
 1. **Add Notes**: Quickly create new notes to capture your thoughts and ideas.
@@ -16,6 +18,7 @@ ProNotes is a simple note-taking application using Tauri (React + Rust), with a 
 
 6. **Note Editor**: Enjoy a user-friendly note editor that makes writing and organizing notes a breeze.
 
+![App Screenshot](./pronotesNoteEditor.png)
 
 ### Installation For Linux
 
