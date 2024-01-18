@@ -19,6 +19,12 @@ ProNotes is a simple note-taking application using Tauri (React + Rust), with a 
 
 ### Installation For Linux
 
-Clone the project.
+Clone the project
+
 cd pronotes
-./pronotes
+
+./make
+
+or
+
+bash make
