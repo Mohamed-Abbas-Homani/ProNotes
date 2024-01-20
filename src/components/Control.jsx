@@ -4,7 +4,13 @@ import { IoMdAdd } from "react-icons/io";
 import { BiCheck } from "react-icons/bi";
 import { upsertNote } from '../Methods/methods';
 
-const Control = ({ setCurrent, current, setNotes }) => {
+const Control = (
+  {
+    setCurrent,
+    current,
+    setNotes,
+  }
+  ) => {
   const validate = () => {
     if (!current?.title) return 1;
     if (!current?.text) return 2;

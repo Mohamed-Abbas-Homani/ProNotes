@@ -7,7 +7,6 @@ export default function hexColorAverage(color1, color2, degree) {
     g: calcRgb(rgb1.g, rgb2.g, degree),
     b: calcRgb(rgb1.b, rgb2.b, degree),
   };
-  console.log(averageRgb);
   const averageHex = rgbToHex(averageRgb.r, averageRgb.g, averageRgb.b);
 
   return averageHex;
@@ -31,18 +30,6 @@ function calcRgb(rgb1, rgb2, degree) {
   else if (!raw) return 0;
   else return raw;
 }
-
-export const getRandomHexColor = () => {
-  // Generate three random values for RGB
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
-  // Convert the RGB values to a hex color string
-  const hexColor = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-
-  return hexColor;
-};
 
 export const getRandomGoodHexColor = () => {
   // Generate three random values for RGB

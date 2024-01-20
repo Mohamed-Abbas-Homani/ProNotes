@@ -1,7 +1,4 @@
-
-
-// export default App;
-import {useMemo, useState } from "react";
+import {useState } from "react";
 import "./App.css";
 import Logo from "./components/Logo";
 import Notes from "./components/Notes";
@@ -11,8 +8,6 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [current, setCurrent] = useState(null)
   const [colors, setColors] = useState({})
-
-  const memoizedNotes = useMemo(() =>  notes, [notes])
 
   return (
     <div className="container">
@@ -26,7 +21,7 @@ function App() {
 
       <Notes
       colors={colors}
-      notes={memoizedNotes}
+      notes={notes}
       current={current}
       setCurrent={setCurrent}
       setNotes={setNotes}

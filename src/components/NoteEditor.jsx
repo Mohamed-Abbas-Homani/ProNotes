@@ -30,7 +30,14 @@ const listed = (text) => {
   return new_text;
 };
 
-const NoteEditor = ({ current, setCurrent, changeText }) => {
+const weekDay = (date) => {
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return weekdays[new Date(date).getDay()];
+}
+
+const dateDisplay = (date) => weekDay(date) + ", " + date;
+
+const NoteEditor = ({ current, changeText }) => {
   const [showTime, setShowTime] = useState(false);
 
   const handleClear = () => {
@@ -118,9 +125,9 @@ const NoteEditor = ({ current, setCurrent, changeText }) => {
           />
           {showTime && (
             <>
-              <p className="date-display">{current.date.split("T")[0]}</p>
-              <p className="time-display1 time">{current.date.split("T")[1].slice(0, 2).replace(":","")}</p>
-              <p className="time-display2 time">{current.date.split("T")[1].slice(3, 5).replace(":","")}</p>
+              <p className="date-display">{dateDisplay(current.date.split("T")[0])}</p>
+              <p className="time-display1 time">{current.date.split("T")[1].split(":")[0]}</p>
+              <p className="time-display2 time">{current.date.split("T")[1].split(":")[1]}</p>
               <p className="time-display3 time">{current.date.split("T")[1].split(" ")[1].toLowerCase()}</p>
             </>
           )}

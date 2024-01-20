@@ -1,0 +1,44 @@
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeout 0.5s ease-in-out;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadein 0.5s ease-in-out;
+}
+
+@keyframes opennote {
+    from {
+ 
+        opacity: 1;
+    }
+
+    to {
+ 
+        transform: scale(1.5) rotate(5deg);
+        opacity: 0.1;
+    }
+}
+
+.open-note {
+    animation: opennote 0.2s ease-in-out;
+}

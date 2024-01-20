@@ -5,16 +5,24 @@ import NoteEditor from './NoteEditor';
 import { getNotes } from '../Methods/methods';
 import Clipboard from 'clipboard';
 
-const Notes = ({ notes, setNotes, setCurrent, current, colors }) => {
+const Notes = (
+  {
+    notes,
+    setNotes,
+    setCurrent,
+    current,
+    colors,
+  }
+  ) => {
   const changeText = (newText) => {
     setCurrent({ ...current, text: newText });
   };
 
   useEffect(() => {
+
     getNotes().then(setNotes);
     const clipboard = new Clipboard('.copy-icon');
 
-    // Cleanup clipboard on unmount
     return () => {
       clipboard.destroy();
     };
@@ -50,7 +58,7 @@ const Notes = ({ notes, setNotes, setCurrent, current, colors }) => {
 
   return (
     <>
-      {!current &&
+      {!current ?
         <div className='notes'>
           {notes
             .filter(({ pinned }) => pinned)
@@ -75,8 +83,8 @@ const Notes = ({ notes, setNotes, setCurrent, current, colors }) => {
                 setCurrent={setCurrent}
               />
             ))}
-        </div>}
-      {current &&
+        </div>
+          :
         <NoteEditor
           changeText={changeText}
           current={current}

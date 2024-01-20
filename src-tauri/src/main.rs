@@ -74,7 +74,6 @@ fn get_config(app_handle: AppHandle) -> FrontendConfig {
     let frontend_config = if let Ok(config) = FrontendConfig::from_file(&config_file_path) {
         config
     } else {
-        // If the file doesn't exist or there's an issue, use default values
         FrontendConfig::new("#DCC9B6", "#6D4C3D")
     };
     frontend_config
@@ -87,7 +86,6 @@ fn set_config(app_handle: AppHandle, config : FrontendConfig) -> FrontendConfig 
     fs::create_dir_all(&app_dir).expect("The app data directory should be created.");
     let config_file_path = app_dir.join("config.json");
 
-    // Save the updated configuration to the file
     let serialized_config = serde_json::to_string_pretty(&config).unwrap();
     fs::write(config_file_path, serialized_config).expect("Unable to write to config file");
     config
