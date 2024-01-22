@@ -1,14 +1,15 @@
 import "./App.css";
-import Logo from "./components/Logo";
-import Notes from "./components/Notes";
-import Control from "./components/Control";
+import Head from "./components/Head";
+import Mid from "./components/Mid";
+import Bottom from "./components/Bottom";
 
+//The Global Component
 function App() {
   return (
     <div className="container">
-      <Logo/>
-      <Notes/>
-      <Control/>
+      <Head/>
+      <Mid/>
+      <Bottom/>
     </div>
   );
 }

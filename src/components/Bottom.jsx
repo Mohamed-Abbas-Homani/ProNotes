@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import "./Control.css";
+import React, { useEffect } from 'react';
+import "./Bottom.css";
 import { IoMdAdd } from "react-icons/io";
 import { BiCheck } from "react-icons/bi";
 import { upsertNote } from '../Methods/methods';
 import { useCurrent, useSetCurrent, useSetNotes } from '../zustandstore';
 
-const Control = () => {
+// Representing the Add/save buttons + the tag of the current note.
+const Bottom = () => {
   const setCurrent= useSetCurrent();
   const current = useCurrent();
   const setNotes = useSetNotes();
@@ -84,4 +85,4 @@ const Control = () => {
   );
 }
 
-export default Control;
+export default Bottom;

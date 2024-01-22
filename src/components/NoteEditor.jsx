@@ -1,11 +1,11 @@
-import "./Notes.css";
+import "./Mid.css";
 import { FaEraser } from "react-icons/fa6";
 import { RxLetterCaseUppercase as Upicon, RxLetterCaseLowercase as Lowicon } from "react-icons/rx";
 import { FaCopy, FaList } from "react-icons/fa6";
 import { PiNumberTwoFill as Two } from "react-icons/pi";
 import { MdRemove } from "react-icons/md";
 import { BiTimeFive } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useCurrent, useSetCurrent } from "../zustandstore";
 
 const wordsNumber = (text) => {
@@ -41,6 +41,8 @@ const NoteEditor = () => {
   const current = useCurrent()
   const setCurrent = useSetCurrent()
   const [showTime, setShowTime] = useState(false);
+
+  const date = useMemo(() => dateDisplay(current.date.split("T")[0]), [current?.date]);
 
   const changeText = (newText) => {
     setCurrent({ ...current, text: newText });
@@ -136,12 +138,12 @@ const NoteEditor = () => {
             onClick={() => setShowTime(!showTime)}
           />
           {showTime && (
-            <>
-              <p className="date-display">{dateDisplay(current.date.split("T")[0])}</p>
+            <div className="fade-in">
+              <p className="date-display">{date}</p>
               <p className="time-display1 time">{current.date.split("T")[1].split(":")[0]}</p>
               <p className="time-display2 time">{current.date.split("T")[1].split(":")[1]}</p>
               <p className="time-display3 time">{current.date.split("T")[1].split(" ")[1].toLowerCase()}</p>
-            </>
+            </div>
           )}
         </>
       )}

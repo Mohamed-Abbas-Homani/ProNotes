@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import "./Logo.css";
+import "./Head.css";
 import { BiSearch, BiSolidTrashAlt } from "react-icons/bi";
 import { MdInvertColors } from "react-icons/md";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -33,7 +33,8 @@ const changeAppColors = (main, border) => {
   document.documentElement.style.setProperty('--border', border);
 };
 
-const Logo = () => {
+// Representing the Logo , search section, colors sections and general control + the title of the current note.
+const Head = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const setNotes = useSetNotes();
   const current = useCurrent();
@@ -259,4 +260,4 @@ const Logo = () => {
   );
 }
 
-export default Logo;
+export default Head;

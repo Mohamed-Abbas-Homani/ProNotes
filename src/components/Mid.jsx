@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import "./Notes.css";
+import "./Mid.css";
 import Note from './Note';
 import NoteEditor from './NoteEditor';
 import { getNotes } from '../Methods/methods';
 import Clipboard from 'clipboard';
 import { useColors, useCurrent, useNotes, useSetCurrent, useSetNotes } from '../zustandstore';
 
-const Notes = () => {
+// Representing the Notes filtred into pinned and unpinned notes + the Note Editor(note body).
+const Mid = () => {
   const notes = useNotes();
   const setNotes = useSetNotes();
   const setCurrent = useSetCurrent();
@@ -73,4 +74,4 @@ const Notes = () => {
   );
 };
 
-export default Notes;
+export default Mid;
