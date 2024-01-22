@@ -5,6 +5,7 @@ import { BiSolidTrashAlt } from "react-icons/bi";
 import { deleteNote, upsertNote } from '../Methods/methods';
 import { BsPinAngleFill, BsPinFill } from "react-icons/bs";
 import hexColorAverage from '../Methods/colors';
+import { useColors, useSetCurrent, useSetNotes } from '../zustandstore';
 
 const Note = (
   {
@@ -14,10 +15,10 @@ const Note = (
     tag,
     date,
     pinned,
-    setNotes,
-    setCurrent,
-    colors,
   }) => {
+  const setNotes = useSetNotes();
+  const setCurrent = useSetCurrent();
+  const colors = useColors();
   const [focus, setFocus] = useState(false);
   const [animation, setAnimation] = useState(
     {

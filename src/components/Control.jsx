@@ -3,14 +3,12 @@ import "./Control.css";
 import { IoMdAdd } from "react-icons/io";
 import { BiCheck } from "react-icons/bi";
 import { upsertNote } from '../Methods/methods';
+import { useCurrent, useSetCurrent, useSetNotes } from '../zustandstore';
 
-const Control = (
-  {
-    setCurrent,
-    current,
-    setNotes,
-  }
-  ) => {
+const Control = () => {
+  const setCurrent= useSetCurrent();
+  const current = useCurrent();
+  const setNotes = useSetNotes();
   const validate = () => {
     if (!current?.title) return 1;
     if (!current?.text) return 2;
@@ -28,10 +26,17 @@ const Control = (
     }
   }
 
+  const enterClicked = () => {
+    if(!!!current)
+    setCurrent({ id: null, title: "", text: "", tag: "", date: "", pinned: false });
+    else setCurrent({...current, text:current.text})
+  }
+
   const handleKeyPress = (e) => {
+
     const key = e.key;
     if (key === 'Enter') {
-      setCurrent(current => current ? current : { id: null, title: "", text: "", tag: "", date: "", pinned: false });
+      enterClicked()
     }
     if (e.ctrlKey)
       if (key === 's') {

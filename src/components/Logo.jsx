@@ -7,6 +7,7 @@ import { deleteNotes, deleteNote, upsertNote, unpinNotes, searchNotes } from '..
 import { getConfig, setConfig } from '../Methods/config';
 import hexColorAverage, { getRandomGoodHexColor } from '../Methods/colors';
 import { BsPinAngleFill, BsPinFill } from "react-icons/bs";
+import { useColors, useCurrent, useSetColors, useSetCurrent, useSetNotes } from '../zustandstore';
 
 const initialState = {
   showColors: false,
@@ -32,16 +33,13 @@ const changeAppColors = (main, border) => {
   document.documentElement.style.setProperty('--border', border);
 };
 
-const Logo = (
-  {
-    setNotes,
-    current,
-    setCurrent,
-    colors,
-    setColors,
-  }
-  ) => {
+const Logo = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const setNotes = useSetNotes();
+  const current = useCurrent();
+  const setCurrent = useSetCurrent();
+  const colors = useColors();
+  const setColors = useSetColors();
 
   useEffect(() => {
     getConfig().then(setColors);
@@ -49,9 +47,9 @@ const Logo = (
   }, []);
 
   useEffect(() => {
-    setConfig(colors).then(setColors);
+    setConfig(colors)
     changeAppColors(colors.primary_color, colors.secondary_color);
-  }, [colors.primary_color, colors.secondary_color]);
+  }, [colors?.primary_color, colors?.secondary_color]);
 
   useEffect(() => {
     searchNotes(state.search).then(setNotes);

@@ -5,7 +5,8 @@ import { FaCopy, FaList } from "react-icons/fa6";
 import { PiNumberTwoFill as Two } from "react-icons/pi";
 import { MdRemove } from "react-icons/md";
 import { BiTimeFive } from "react-icons/bi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useCurrent, useSetCurrent } from "../zustandstore";
 
 const wordsNumber = (text) => {
   let final = 0;
@@ -19,7 +20,6 @@ const wordsNumber = (text) => {
   }
   return final;
 };
-
 const listed = (text) => {
   let new_text = "";
   text.split("\n").map((line) => {
@@ -37,8 +37,14 @@ const weekDay = (date) => {
 
 const dateDisplay = (date) => weekDay(date) + ", " + date;
 
-const NoteEditor = ({ current, changeText }) => {
+const NoteEditor = () => {
+  const current = useCurrent()
+  const setCurrent = useSetCurrent()
   const [showTime, setShowTime] = useState(false);
+
+  const changeText = (newText) => {
+    setCurrent({ ...current, text: newText });
+  };
 
   const handleClear = () => {
     changeText("");
@@ -63,6 +69,12 @@ const NoteEditor = ({ current, changeText }) => {
   const handleAddHorizontalLine = () => {
     changeText(current.text + "\n__________________________________________");
   };
+
+  useEffect(() => {
+    if (current && current.text.includes("- ")) {
+      changeText(current.text.replace("- ", "\u2022 "));
+    }
+  }, [current?.text]);
 
   return (
     <div className='show-current'>

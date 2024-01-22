@@ -5,6 +5,7 @@ export const getConfig = async () => {
 }
 
 export const setConfig = async (config) => {
+    if(!config.primary_color) return;
     return await invoke("set_config", {config});
 }
 

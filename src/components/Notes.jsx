@@ -4,29 +4,23 @@ import Note from './Note';
 import NoteEditor from './NoteEditor';
 import { getNotes } from '../Methods/methods';
 import Clipboard from 'clipboard';
+import { useColors, useCurrent, useNotes, useSetCurrent, useSetNotes } from '../zustandstore';
 
-const Notes = (
-  {
-    notes,
-    setNotes,
-    setCurrent,
-    current,
-    colors,
-  }
-  ) => {
-  const changeText = (newText) => {
-    setCurrent({ ...current, text: newText });
-  };
+const Notes = () => {
+  const notes = useNotes();
+  const setNotes = useSetNotes();
+  const setCurrent = useSetCurrent();
+  const current = useCurrent();
+  const colors = useColors();
 
   useEffect(() => {
-
     getNotes().then(setNotes);
     const clipboard = new Clipboard('.copy-icon');
 
     return () => {
       clipboard.destroy();
     };
-  }, [setNotes]);
+  }, []);
 
   const handleKeyPress = (e) => {
     const key = e.key;
@@ -50,12 +44,6 @@ const Notes = (
     };
   }, []);
 
-  useEffect(() => {
-    if (current && current.text.includes("- ")) {
-      changeText(current.text.replace("- ", "\u2022 "));
-    }
-  }, [current?.text]);
-
   return (
     <>
       {!current ?
@@ -66,9 +54,6 @@ const Notes = (
               <Note
                 key={i + note.id}
                 {...note}
-                colors={colors}
-                setNotes={setNotes}
-                setCurrent={setCurrent}
               />
             ))}
 
@@ -78,18 +63,11 @@ const Notes = (
               <Note
                 key={i + note.id}
                 {...note}
-                colors={colors}
-                setNotes={setNotes}
-                setCurrent={setCurrent}
               />
             ))}
         </div>
           :
-        <NoteEditor
-          changeText={changeText}
-          current={current}
-          setCurrent={setCurrent}
-        />
+        <NoteEditor/>
       }
     </>
   );
